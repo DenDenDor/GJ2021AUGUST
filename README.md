@@ -1,2 +1,2 @@
 # GJ2021AUGUST
-Game Jam l
+Game Jam 
