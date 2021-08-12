@@ -25,7 +25,7 @@ public class CircleEnemy : MonoBehaviour, IEnemy
 
 	public void TakeDamage(int _damage) {
 		Health -= 1;
-		if (Health == 0) 
+		if (Health <= 0) 
         {
 			OnDeath?.Invoke();
 			Destroy(gameObject);
