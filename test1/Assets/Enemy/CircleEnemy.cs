@@ -9,8 +9,8 @@ public class CircleEnemy : MonoBehaviour, IEnemy
 	private Color _currentColor;
 	public event UnityAction OnDeath;
 
-[SerializeField] private int _health;
-[SerializeField]   private int _damage;
+[SerializeField] private int _health = 10;
+[SerializeField]   private int _damage = 1;
 	
 
 	public int Health { get { return _health; } set { _health = Mathf.Clamp(value,0, 10000); } }
@@ -25,7 +25,7 @@ public class CircleEnemy : MonoBehaviour, IEnemy
 
 	public void TakeDamage(int _damage) {
 		Health -= 1;
-		if (Health == 0) 
+		if (Health <= 0) 
         {
 			OnDeath?.Invoke();
 			Destroy(gameObject);
